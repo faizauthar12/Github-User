@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/GHUser_Avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/GHUser_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/GHU_name"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/GHUser_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/GHU_username"
+            android:textStyle="italic"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/GHUser_octo"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:padding="3dp"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="@string/github_ocotpus_vector"
+                android:src="@drawable/ic_octicons_mark_github" />
+
+            <TextView
+                android:id="@+id/GHUser_Followers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                tools:text="@string/GHU_followers"/>
+
+            <TextView
+                android:id="@+id/GHUser_Following"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                tools:text="@string/GHU_following"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

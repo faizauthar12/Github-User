@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Github User</string>
+    <string name="GHU_name">Nama pengguna</string>
+    <string name="GHU_username">Username pengguna</string>
+    <string name="GHU_followers">followers pengguna</string>
+    <string name="GHU_following">following pengguna</string>
+    <string name="github_ocotpus_vector">GitHub Ocotpus Vector</string>
 
     <string-array name="username">
         <item>JakeWharton</item>
