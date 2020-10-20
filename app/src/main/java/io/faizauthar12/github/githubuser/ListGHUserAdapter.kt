@@ -18,7 +18,7 @@ class ListGHUserAdapter(private val listGHUser: ArrayList<GHUser>): RecyclerView
                         .apply(RequestOptions().override(60,60))
                         .into(GHUser_Avatar)
                 GHUser_name.text = ghUser.name
-                GHUser_username.text = ghUser.username
+                GHUser_username.text = "@${ghUser.username}"
                 GHUser_Followers.text = "Followers : ${ghUser.followers}"
                 GHUser_Following.text = "Following : ${ghUser.following}"
             }

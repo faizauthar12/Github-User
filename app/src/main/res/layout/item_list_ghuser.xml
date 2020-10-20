@@ -28,8 +28,7 @@
             android:id="@+id/GHUser_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="@string/GHU_username"
-            android:textStyle="italic"/>
+            tools:text="@string/GHU_username" />
 
         <LinearLayout
             android:layout_width="match_parent"
