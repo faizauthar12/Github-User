@@ -16,112 +16,101 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179"
+        app:layout_constraintVertical_bias="0.329"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/GHUser_name"
-        android:layout_width="281dp"
-        android:layout_height="41dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/GHUser_Avatar"
-        app:layout_constraintVertical_bias="0.029"
+        app:layout_constraintVertical_bias="0.023"
         tools:text="@string/GHU_name" />
 
     <TextView
         android:id="@+id/GHUser_username"
-        android:layout_width="128dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/GHUser_name"
         app:layout_constraintVertical_bias="0.0"
         tools:text="@string/GHU_username" />
 
-    <ImageView
-        android:id="@+id/GHUser_octo"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="24dp"
-        android:contentDescription="@string/github_ocotpus_vector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/GHUser_name"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_username"
-        app:layout_constraintVertical_bias="0.026"
-        app:srcCompat="@drawable/ic_octicons_mark_github" />
-
     <TextView
         android:id="@+id/GHUser_Followers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        tools:text="@string/GHU_followers"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/GHUser_octo"
+        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/GHUser_username"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.028"
+        tools:text="@string/GHU_followers" />
 
     <TextView
         android:id="@+id/GHUser_Following"
-        android:layout_width="69dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="5dp"
-        tools:text="@string/GHU_following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toEndOf="@+id/GHUser_Followers"
         app:layout_constraintTop_toBottomOf="@+id/GHUser_username"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.028"
+        tools:text="@string/GHU_following" />
 
     <TextView
         android:id="@+id/GHUser_repository"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        tools:text="@string/GHU_repository"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/GHUser_name"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/GHUser_Following"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_username"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GHUser_Following"
+        app:layout_constraintVertical_bias="0.037"
+        tools:text="@string/GHU_repository" />
 
     <TextView
         android:id="@+id/GHUser_location"
-        android:layout_width="130dp"
-        android:layout_height="19dp"
-        tools:text="@string/GHU_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/GHUser_name"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/GHUser_name"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_Following"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GHUser_repository"
+        app:layout_constraintVertical_bias="0.069"
+        tools:text="@string/GHU_location" />
 
     <TextView
         android:id="@+id/GHUser_company"
-        android:layout_width="127dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="28dp"
-        tools:text="@string/GHU_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/GHUser_name"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/GHUser_location"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_Following"
-        app:layout_constraintVertical_bias="0.005" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GHUser_location"
+        app:layout_constraintVertical_bias="0.092"
+        tools:text="@string/GHU_company" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

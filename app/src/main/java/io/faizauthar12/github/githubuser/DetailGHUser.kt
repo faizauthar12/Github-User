@@ -17,9 +17,9 @@ class DetailGHUser : AppCompatActivity() {
 
         val ghuser = intent.getParcelableExtra<GHUser>(EXTRA_GHUSER) as GHUser
         GHUser_name.text = ghuser.name
-        GHUser_username.text = ghuser.username
+        GHUser_username.text = "@${ghuser.username}"
         GHUser_Followers.text = "Followers : ${ghuser.followers}"
-        GHUser_Following.text = "Followers : ${ghuser.following}"
+        GHUser_Following.text = "Following : ${ghuser.following}"
         GHUser_repository.text = "Repository : ${ghuser.repository}"
         GHUser_location.text = ghuser.location
         GHUser_company.text = ghuser.company
