@@ -28,5 +28,10 @@ class DetailGHUser : AppCompatActivity() {
                 .load(ghuser.avatar)
                 .apply(RequestOptions().override(100,100))
                 .into(GHUser_Avatar)
+
+        setActionBarTitle(ghuser.name)
+    }
+    private fun setActionBarTitle(title: String?) {
+        supportActionBar?.title = title
     }
 }
