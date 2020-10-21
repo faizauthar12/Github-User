@@ -1,5 +1,6 @@
 package io.faizauthar12.github.githubuser
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -48,5 +49,13 @@ class MainActivity : AppCompatActivity() {
         rv_GHUser.layoutManager = LinearLayoutManager(this)
         val listGHUserAdapter = ListGHUserAdapter(list)
         rv_GHUser.adapter = listGHUserAdapter
+
+        listGHUserAdapter.setOnItemClickCallback(object : ListGHUserAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: GHUser) {
+                val intent = Intent(this@MainActivity, DetailGHUser::class.java)
+                intent.putExtra(DetailGHUser.EXTRA_GHUSER,data)
+                startActivity(intent)
+            }
+        })
     }
 }

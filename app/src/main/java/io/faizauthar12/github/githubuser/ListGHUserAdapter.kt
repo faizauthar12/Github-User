@@ -10,6 +10,12 @@ import kotlinx.android.synthetic.main.item_list_ghuser.view.*
 import java.util.ArrayList
 
 class ListGHUserAdapter(private val listGHUser: ArrayList<GHUser>): RecyclerView.Adapter<ListGHUserAdapter.ListViewHolder>() {
+    private var onItemClickCallback: OnItemClickCallback? = null
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(ghUser: GHUser) {
             with(itemView) {
@@ -21,6 +27,8 @@ class ListGHUserAdapter(private val listGHUser: ArrayList<GHUser>): RecyclerView
                 GHUser_username.text = "@${ghUser.username}"
                 GHUser_Followers.text = "Followers : ${ghUser.followers}"
                 GHUser_Following.text = "Following : ${ghUser.following}"
+
+                itemView.setOnClickListener { onItemClickCallback?.onItemClicked(ghUser) }
             }
         }
     }
@@ -35,4 +43,8 @@ class ListGHUserAdapter(private val listGHUser: ArrayList<GHUser>): RecyclerView
     }
 
     override fun getItemCount(): Int = listGHUser.size
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: GHUser)
+    }
 }
