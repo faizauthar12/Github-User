@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Github User</string>
     <string name="GHU_name">Nama pengguna</string>
-    <string name="GHU_username">Username</string>
-    <string name="GHU_followers">followers</string>
-    <string name="GHU_following">following</string>
+    <string name="GHU_username">"@%1$s"</string>
+    <string name="GHU_followers">followers %1$s</string>
+    <string name="GHU_following">following %1$s</string>
     <string name="github_ocotpus_vector">GitHub Ocotpus Vector</string>
-    <string name="GHU_repository">repository</string>
+    <string name="GHU_repository">repository %1$s</string>
     <string name="GHU_company">company</string>
     <string name="GHU_location">lokasi</string>
 

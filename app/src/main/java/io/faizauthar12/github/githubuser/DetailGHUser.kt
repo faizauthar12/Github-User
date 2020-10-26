@@ -16,11 +16,12 @@ class DetailGHUser : AppCompatActivity() {
         setContentView(R.layout.activity_detail_g_h_user)
 
         val ghuser = intent.getParcelableExtra<GHUser>(EXTRA_GHUSER) as GHUser
+
         GHUser_name.text = ghuser.name
-        GHUser_username.text = "@${ghuser.username}"
-        GHUser_Followers.text = "Followers : ${ghuser.followers}"
-        GHUser_Following.text = "Following : ${ghuser.following}"
-        GHUser_repository.text = "Repository : ${ghuser.repository}"
+        GHUser_username.text = getString(R.string.GHU_username, ghuser.username)
+        GHUser_Followers.text = getString(R.string.GHU_followers, ghuser.followers)
+        GHUser_Following.text = getString(R.string.GHU_following, ghuser.following)
+        GHUser_repository.text = getString(R.string.GHU_repository, ghuser.repository)
         GHUser_location.text = ghuser.location
         GHUser_company.text = ghuser.company
 

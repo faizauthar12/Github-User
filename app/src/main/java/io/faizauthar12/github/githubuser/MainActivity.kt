@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         showRecyclerList()
     }
 
-    fun getListGHUsers(): ArrayList<GHUser> {
+    private fun getListGHUsers(): ArrayList<GHUser> {
         val dataUsername = resources.getStringArray(R.array.username)
         val dataName = resources.getStringArray(R.array.name)
         val dataLocation = resources.getStringArray(R.array.location)

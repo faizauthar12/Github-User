@@ -38,7 +38,7 @@
                 android:id="@+id/GHUser_octo"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
-                android:padding="3dp"
+                android:layout_gravity="center"
                 android:layout_marginEnd="5dp"
                 android:contentDescription="@string/github_ocotpus_vector"
                 android:src="@drawable/ic_octicons_mark_github" />
