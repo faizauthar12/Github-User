@@ -1,4 +1,4 @@
-package io.faizauthar12.github.githubuser
+package io.faizauthar12.github.githubuser.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import io.faizauthar12.github.githubuser.Model.GHUser
+import io.faizauthar12.github.githubuser.R
 import kotlinx.android.synthetic.main.item_list_ghuser.view.*
 import java.util.ArrayList
 

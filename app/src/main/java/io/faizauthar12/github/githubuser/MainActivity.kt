@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity.DetailGHUserActivity
+import io.faizauthar12.github.githubuser.Adapter.ListGHUserAdapter
+import io.faizauthar12.github.githubuser.Model.GHUser
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -52,8 +55,8 @@ class MainActivity : AppCompatActivity() {
 
         listGHUserAdapter.setOnItemClickCallback(object : ListGHUserAdapter.OnItemClickCallback {
             override fun onItemClicked(data: GHUser) {
-                val intent = Intent(this@MainActivity, DetailGHUser::class.java)
-                intent.putExtra(DetailGHUser.EXTRA_GHUSER,data)
+                val intent = Intent(this@MainActivity, DetailGHUserActivity::class.java)
+                intent.putExtra(DetailGHUserActivity.EXTRA_GHUSER,data)
                 startActivity(intent)
             }
         })

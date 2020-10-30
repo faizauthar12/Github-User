@@ -1,12 +1,14 @@
-package io.faizauthar12.github.githubuser
+package io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import io.faizauthar12.github.githubuser.Model.GHUser
+import io.faizauthar12.github.githubuser.R
 import kotlinx.android.synthetic.main.activity_detail_g_h_user.*
 
-class DetailGHUser : AppCompatActivity() {
+class DetailGHUserActivity : AppCompatActivity() {
     companion object{
         const val EXTRA_GHUSER = "extra_ghuser"
     }
