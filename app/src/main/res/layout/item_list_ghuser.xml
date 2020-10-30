@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/GHUser_Avatar"
+        android:id="@+id/IV_GHUser_Avatar"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="5dp"
@@ -20,68 +20,68 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/GHUser_name"
+        android:id="@+id/TV_GHUser_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/GHUser_Avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/IV_GHUser_Avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toEndOf="@+id/GHUser_Avatar"
-        app:layout_constraintTop_toTopOf="@+id/GHUser_Avatar"
+        app:layout_constraintStart_toEndOf="@+id/IV_GHUser_Avatar"
+        app:layout_constraintTop_toTopOf="@+id/IV_GHUser_Avatar"
         app:layout_constraintVertical_bias="0.0"
         tools:text="@string/GHU_name" />
 
     <TextView
-        android:id="@+id/GHUser_username"
+        android:id="@+id/TV_GHUser_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/GHUser_Avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/IV_GHUser_Avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/GHUser_name"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_name"
+        app:layout_constraintStart_toStartOf="@+id/TV_GHUser_name"
+        app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_name"
         app:layout_constraintVertical_bias="0.0"
         tools:text="@string/GHU_username" />
 
     <ImageView
-        android:id="@+id/GHUser_octo"
+        android:id="@+id/IV_GHUser_octo"
         android:layout_width="18dp"
         android:layout_height="15dp"
         android:layout_marginTop="5dp"
         android:contentDescription="@string/github_ocotpus_vector"
-        app:layout_constraintBottom_toBottomOf="@+id/GHUser_Avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/IV_GHUser_Avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/GHUser_username"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_username"
+        app:layout_constraintStart_toStartOf="@+id/TV_GHUser_username"
+        app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_username"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_octicons_mark_github" />
 
     <TextView
-        android:id="@+id/GHUser_Followers"
+        android:id="@+id/TV_GHUser_Followers"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/GHUser_octo"
+        app:layout_constraintBottom_toBottomOf="@+id/IV_GHUser_octo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toEndOf="@+id/GHUser_octo"
-        app:layout_constraintTop_toTopOf="@+id/GHUser_octo"
+        app:layout_constraintStart_toEndOf="@+id/IV_GHUser_octo"
+        app:layout_constraintTop_toTopOf="@+id/IV_GHUser_octo"
         app:layout_constraintVertical_bias="1.0"
         tools:text="@string/GHU_followers" />
 
     <TextView
-        android:id="@+id/GHUser_Following"
+        android:id="@+id/TV_GHUser_Following"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
         android:layout_marginStart="5dp"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/GHUser_Followers"
+        app:layout_constraintBottom_toBottomOf="@+id/TV_GHUser_Followers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/GHUser_Followers"
-        app:layout_constraintTop_toTopOf="@+id/GHUser_Followers"
+        app:layout_constraintStart_toEndOf="@+id/TV_GHUser_Followers"
+        app:layout_constraintTop_toTopOf="@+id/TV_GHUser_Followers"
         app:layout_constraintVertical_bias="0.0"
         tools:text="@string/GHU_following" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,10 +17,10 @@ class DetailGHUser : AppCompatActivity() {
 
         val ghuser = intent.getParcelableExtra<GHUser>(EXTRA_GHUSER) as GHUser
 
-        GHUser_name.text = ghuser.name
-        GHUser_username.text = getString(R.string.GHU_username, ghuser.username)
-        GHUser_Followers.text = getString(R.string.GHU_followers, ghuser.followers)
-        GHUser_Following.text = getString(R.string.GHU_following, ghuser.following)
+        TV_GHUser_name.text = ghuser.name
+        TV_GHUser_username.text = getString(R.string.GHU_username, ghuser.username)
+        TV_GHUser_Followers.text = getString(R.string.GHU_followers, ghuser.followers)
+        TV_GHUser_Following.text = getString(R.string.GHU_following, ghuser.following)
         GHUser_repository.text = getString(R.string.GHU_repository, ghuser.repository)
         GHUser_location.text = ghuser.location
         GHUser_company.text = ghuser.company
@@ -28,7 +28,7 @@ class DetailGHUser : AppCompatActivity() {
         Glide.with(applicationContext)
                 .load(ghuser.avatar)
                 .apply(RequestOptions().override(100,100))
-                .into(GHUser_Avatar)
+                .into(IV_GHUser_Avatar)
 
         setActionBarTitle(ghuser.name)
     }

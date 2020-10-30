@@ -8,7 +8,7 @@
     tools:context=".DetailGHUser">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/GHUser_Avatar"
+        android:id="@+id/IV_GHUser_Avatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +20,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/GHUser_name"
+        android:id="@+id/TV_GHUser_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
@@ -29,12 +29,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_Avatar"
+        app:layout_constraintTop_toBottomOf="@+id/IV_GHUser_Avatar"
         app:layout_constraintVertical_bias="0.023"
         tools:text="@string/GHU_name" />
 
     <TextView
-        android:id="@+id/GHUser_username"
+        android:id="@+id/TV_GHUser_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -43,12 +43,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_name"
+        app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_name"
         app:layout_constraintVertical_bias="0.0"
         tools:text="@string/GHU_username" />
 
     <TextView
-        android:id="@+id/GHUser_Followers"
+        android:id="@+id/TV_GHUser_Followers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -56,12 +56,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.274"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_username"
+        app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_username"
         app:layout_constraintVertical_bias="0.028"
         tools:text="@string/GHU_followers" />
 
     <TextView
-        android:id="@+id/GHUser_Following"
+        android:id="@+id/TV_GHUser_Following"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -69,8 +69,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toEndOf="@+id/GHUser_Followers"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_username"
+        app:layout_constraintStart_toEndOf="@+id/TV_GHUser_Followers"
+        app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_username"
         app:layout_constraintVertical_bias="0.028"
         tools:text="@string/GHU_following" />
 
@@ -83,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_Following"
+        app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_Following"
         app:layout_constraintVertical_bias="0.037"
         tools:text="@string/GHU_repository" />
 

@@ -22,11 +22,11 @@ class ListGHUserAdapter(private val listGHUser: ArrayList<GHUser>): RecyclerView
                 Glide.with(itemView.context)
                         .load(ghUser.avatar)
                         .apply(RequestOptions().override(60,60))
-                        .into(GHUser_Avatar)
-                GHUser_name.text = ghUser.name
-                GHUser_username.text = "@${ghUser.username}"
-                GHUser_Followers.text = "Followers : ${ghUser.followers}"
-                GHUser_Following.text = "Following : ${ghUser.following}"
+                        .into(IV_GHUser_Avatar)
+                TV_GHUser_name.text = ghUser.name
+                TV_GHUser_username.text = "@${ghUser.username}"
+                TV_GHUser_Followers.text = "Followers : ${ghUser.followers}"
+                TV_GHUser_Following.text = "Following : ${ghUser.following}"
 
                 itemView.setOnClickListener { onItemClickCallback?.onItemClicked(ghUser) }
             }
