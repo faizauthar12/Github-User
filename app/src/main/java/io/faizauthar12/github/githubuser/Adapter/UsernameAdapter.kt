@@ -34,7 +34,7 @@ class UsernameAdapter : RecyclerView.Adapter<UsernameAdapter.usernameViewHolder>
                         .into(IV_GHUser_Avatar)
                 TV_GHUser_username.text = "@${username.username}"
 
-                itemView.setOnClickListener { onItemClickCallback?.onItemClicked(Username()) }
+                itemView.setOnClickListener { onItemClickCallback?.onItemClicked(username) }
             }
         }
     }
