@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
+import io.faizauthar12.github.githubuser.BuildConfig
 import io.faizauthar12.github.githubuser.Model.Username
 import org.json.JSONObject
 
@@ -15,7 +16,7 @@ class UsernameViewModel: ViewModel() {
 
     val listItems = ArrayList<Username>()
 
-    val apiKey = "to be filled"
+    val apiKey = BuildConfig.API_KEY
     val apiUrl = "https://api.github.com"
 
     val client = AsyncHttpClient()
