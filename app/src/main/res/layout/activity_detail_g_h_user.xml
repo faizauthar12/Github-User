@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.329"
+        app:layout_constraintVertical_bias="0.082"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -47,70 +47,40 @@
         app:layout_constraintVertical_bias="0.0"
         tools:text="@string/GHU_username" />
 
-    <TextView
-        android:id="@+id/TV_GHUser_Followers"
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_detailuser"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:background="@color/design_default_color_primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_username"
-        app:layout_constraintVertical_bias="0.028"
-        tools:text="@string/GHU_followers" />
+        app:layout_constraintVertical_bias="0.067">
+    </com.google.android.material.tabs.TabLayout>
 
-    <TextView
-        android:id="@+id/TV_GHUser_Following"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:gravity="center"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/VP_detailuser"
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toEndOf="@+id/TV_GHUser_Followers"
-        app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_username"
-        app:layout_constraintVertical_bias="0.028"
-        tools:text="@string/GHU_following" />
-
-    <TextView
-        android:id="@+id/GHUser_repository"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_Following"
-        app:layout_constraintVertical_bias="0.037"
-        tools:text="@string/GHU_repository" />
+        app:layout_constraintTop_toBottomOf="@+id/tl_detailuser"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/GHUser_location"
+    <ProgressBar
+        android:id="@+id/pb_detailuser"
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/VP_detailuser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_repository"
-        app:layout_constraintVertical_bias="0.069"
-        tools:text="@string/GHU_location" />
-
-    <TextView
-        android:id="@+id/GHUser_company"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GHUser_location"
-        app:layout_constraintVertical_bias="0.092"
-        tools:text="@string/GHU_company" />
+        app:layout_constraintTop_toBottomOf="@+id/tl_detailuser" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

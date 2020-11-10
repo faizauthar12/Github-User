@@ -8,6 +8,7 @@
     <string name="GHU_repository">repository %1$s</string>
     <string name="GHU_company">company</string>
     <string name="GHU_location">lokasi</string>
+    <string name="user">User</string>
 
     <string-array name="username">
         <item>JakeWharton</item>
