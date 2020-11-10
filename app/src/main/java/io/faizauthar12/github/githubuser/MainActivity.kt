@@ -1,11 +1,12 @@
 package io.faizauthar12.github.githubuser
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity.DetailGHUserActivity
 import io.faizauthar12.github.githubuser.Adapter.UsernameAdapter
 import io.faizauthar12.github.githubuser.Model.Username
 import io.faizauthar12.github.githubuser.ViewModel.UsernameViewModel
@@ -40,7 +41,9 @@ class MainActivity : AppCompatActivity() {
         })
         usernameAdapter.setOnItemClickCallback(object : UsernameAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Username) {
-                Toast.makeText(this@MainActivity, "SELECTED", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@MainActivity, DetailGHUserActivity::class.java)
+                intent.putExtra(DetailGHUserActivity.EXTRA_USER,data)
+                startActivity(intent)
             }
         })
     }
