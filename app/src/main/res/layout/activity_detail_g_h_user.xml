@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082"
+        app:layout_constraintVertical_bias="0.045"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="15sp"
+        app:layout_goneMarginTop="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -46,6 +47,33 @@
         app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_name"
         app:layout_constraintVertical_bias="0.0"
         tools:text="@string/GHU_username" />
+
+    <TextView
+        android:id="@+id/TV_Location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_username"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="@string/GHU_location" />
+
+    <ImageView
+        android:id="@+id/IV_Location"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/TV_Location"
+        app:layout_constraintHorizontal_bias="0.972"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/TV_Location"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_location" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tl_detailuser"
@@ -56,9 +84,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_username"
-        app:layout_constraintVertical_bias="0.067">
-    </com.google.android.material.tabs.TabLayout>
+        app:layout_constraintTop_toBottomOf="@+id/TV_Location"
+        app:layout_constraintVertical_bias="0.022"></com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/VP_detailuser"
