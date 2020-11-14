@@ -9,6 +9,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
+import io.faizauthar12.github.githubuser.Adapter.DetailGHUserActivity.SectionsPagerAdapter
 import io.faizauthar12.github.githubuser.BuildConfig
 import io.faizauthar12.github.githubuser.Model.Username
 import io.faizauthar12.github.githubuser.R
@@ -27,6 +28,7 @@ class DetailGHUserActivity : AppCompatActivity() {
         val username = intent.getParcelableExtra<Username>(EXTRA_USER) as Username
 
         getDetail(username.username)
+        createTabLayout()
     }
 
     private fun getDetail(username: String?) {
@@ -78,5 +80,13 @@ class DetailGHUserActivity : AppCompatActivity() {
                 Log.d("onFailure", error?.message.toString())
             }
         })
+    }
+
+
+    private fun createTabLayout() {
+        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        VP_detailuser.adapter = sectionsPagerAdapter
+        tl_detailuser.setupWithViewPager(VP_detailuser)
+        supportActionBar?.elevation = 0f
     }
 }
