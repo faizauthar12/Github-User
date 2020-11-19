@@ -9,6 +9,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
+import io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity.Fragment.FollowingFragment
 import io.faizauthar12.github.githubuser.Adapter.DetailGHUserActivity.SectionsPagerAdapter
 import io.faizauthar12.github.githubuser.BuildConfig
 import io.faizauthar12.github.githubuser.Model.Username
@@ -28,7 +29,7 @@ class DetailGHUserActivity : AppCompatActivity() {
         val username = intent.getParcelableExtra<Username>(EXTRA_USER) as Username
 
         getDetail(username.username)
-        createTabLayout()
+        createTabLayout(username.username)
     }
 
     private fun getDetail(username: String?) {
@@ -47,7 +48,7 @@ class DetailGHUserActivity : AppCompatActivity() {
                     val result = String(responseBody)
                     val responseObject = JSONObject(result)
                     var name = responseObject.getString("name")
-                    val username = responseObject.getString("login")
+                    val login = responseObject.getString("login")
                     val location = responseObject.getString("location")
 
                     Glide.with(applicationContext)
@@ -68,7 +69,7 @@ class DetailGHUserActivity : AppCompatActivity() {
                         IV_Location.visibility = View.VISIBLE
                     }
 
-                    TV_GHUser_username.text = "@${username}"
+                    TV_GHUser_username.text = "@${login}"
 
                 } catch (e: Exception) {
                     Log.d("Exception", e.message.toString())
@@ -83,8 +84,9 @@ class DetailGHUserActivity : AppCompatActivity() {
     }
 
 
-    private fun createTabLayout() {
+    private fun createTabLayout(username: String?) {
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        sectionsPagerAdapter.username = username
         VP_detailuser.adapter = sectionsPagerAdapter
         tl_detailuser.setupWithViewPager(VP_detailuser)
         supportActionBar?.elevation = 0f

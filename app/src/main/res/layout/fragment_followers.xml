@@ -4,11 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.DetailGHUserActivity.Fragment.FollowersFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_followers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/followers_fragment" />
-
+        tools:listitem="@layout/item_list_ghuser"/>
 </FrameLayout>
