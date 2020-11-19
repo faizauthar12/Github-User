@@ -91,13 +91,14 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/VP_detailuser"
         android:layout_width="match_parent"
-        android:layout_height="430dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tl_detailuser"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <ProgressBar
         android:id="@+id/pb_detailuser"
