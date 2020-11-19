@@ -19,7 +19,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val username = "doraemon"
 
+        rvResults(username)
+    }
+
+    private fun rvResults(username: String) {
         usernameAdapter = UsernameAdapter()
         usernameAdapter.notifyDataSetChanged()
 
@@ -30,7 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         showLoading(true)
 
-        val username = "doraemon"
         usernameViewModel.setUsername(username)
 
         usernameViewModel.getUsername().observe(this, { GHUsername ->
