@@ -9,6 +9,15 @@ import io.faizauthar12.github.githubuser.R
 
 class FollowingFragment : Fragment() {
     companion object {
+        private val ARG_USERNAME = "username"
+
+        fun newInstance(username: String?): FollowingFragment {
+            val fragment = FollowingFragment()
+            val bundle = Bundle()
+            bundle.putString(ARG_USERNAME,username)
+            fragment.arguments = bundle
+            return fragment
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -35,7 +35,7 @@ class DetailGHUserActivity : AppCompatActivity() {
         getDetail(username.username)
 
         /* create tablayout */
-        createTabLayout()
+        createTabLayout(username.username)
     }
 
     private fun imageController() {
@@ -103,8 +103,9 @@ class DetailGHUserActivity : AppCompatActivity() {
         })
     }
 
-    private fun createTabLayout() {
+    private fun createTabLayout(username: String?) {
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        sectionsPagerAdapter.username = username
         VP_detailuser.adapter = sectionsPagerAdapter
         tl_detailuser.setupWithViewPager(VP_detailuser)
         supportActionBar?.elevation = 0f
