@@ -9,4 +9,12 @@
     <string name="GHU_company">company</string>
     <string name="GHU_location">lokasi</string>
     <string name="user">User</string>
+
+    <!-- Followiing fragment -->
+    <string name="tab_text_following">Following</string>
+    <string name="following_fragment">This is following tab</string>
+
+    <!-- Followers fragment -->
+    <string name="tab_text_followers">Followers</string>
+    <string name="followers_fragment">This is followers tab</string>
 </resources>

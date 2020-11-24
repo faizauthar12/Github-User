@@ -71,10 +71,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        tools:text="@string/GHU_company"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_Location" />
+        app:layout_constraintTop_toBottomOf="@+id/TV_Location"
+        tools:text="@string/GHU_company" />
 
     <ImageView
         android:id="@+id/IV_Company"
@@ -84,4 +84,24 @@
         app:layout_constraintEnd_toStartOf="@+id/TV_Company"
         app:layout_constraintTop_toTopOf="@+id/TV_Company"
         app:srcCompat="@drawable/ic_company" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_detailuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@color/design_default_color_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_GHUser_username"
+        app:tabTextColor="@android:color/white" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/VP_detailuser"
+        android:layout_width="match_parent"
+        android:layout_height="410dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tl_detailuser"
+        tools:layout_editor_absoluteX="0dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
