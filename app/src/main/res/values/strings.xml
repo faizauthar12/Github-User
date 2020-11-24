@@ -17,4 +17,7 @@
     <!-- Followers fragment -->
     <string name="tab_text_followers">Followers</string>
     <string name="followers_fragment">This is followers tab</string>
+
+    <!-- Search -->
+    <string name="search_hint">Masukkan nama pengguna</string>
 </resources>
