@@ -36,6 +36,14 @@ class DetailGHUserActivity : AppCompatActivity() {
 
         /* create tablayout */
         createTabLayout(username.username)
+
+        /* Create action bar */
+        createBackButton()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun imageController() {
@@ -109,5 +117,11 @@ class DetailGHUserActivity : AppCompatActivity() {
         VP_detailuser.adapter = sectionsPagerAdapter
         tl_detailuser.setupWithViewPager(VP_detailuser)
         supportActionBar?.elevation = 0f
+    }
+
+    private fun createBackButton() {
+        val actionbar = supportActionBar
+        actionbar!!.title = "Detail User"
+        actionbar.setDisplayHomeAsUpEnabled(true)
     }
 }
