@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        rvResults()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -39,7 +40,8 @@ class MainActivity : AppCompatActivity() {
              * get username
              */
             override fun onQueryTextSubmit(query: String): Boolean {
-                rvResults(query)
+                usernameViewModel.setUsername(query)
+                showLoading(true)
                 return true
             }
 
@@ -53,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-        private fun rvResults(username: String) {
+    private fun rvResults() {
         usernameAdapter = UsernameAdapter()
         usernameAdapter.notifyDataSetChanged()
 
@@ -61,10 +63,6 @@ class MainActivity : AppCompatActivity() {
         rv_GHUser.adapter = usernameAdapter
 
         usernameViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(UsernameViewModel::class.java)
-
-        showLoading(true)
-
-        usernameViewModel.setUsername(username)
 
         usernameViewModel.getUsername().observe(this, { GHUsername ->
             if (GHUsername != null) {
