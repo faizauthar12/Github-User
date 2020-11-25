@@ -48,6 +48,8 @@ class FollowersFragment : Fragment() {
     }
 
     private fun rvFollowers(username: String?) {
+        showLoading(true)
+
         followersAdapter = FollowersAdapter()
         followersAdapter.notifyDataSetChanged()
 
@@ -62,7 +64,16 @@ class FollowersFragment : Fragment() {
         followersViewModel.getFollowers().observe(viewLifecycleOwner, {FollowersItems ->
             if (FollowersItems != null) {
                 followersAdapter.setData(FollowersItems)
+                showLoading(false)
             }
         })
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            pb_FragmentFollowers.visibility = View.VISIBLE
+        } else {
+            pb_FragmentFollowers.visibility = View.GONE
+        }
     }
 }

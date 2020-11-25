@@ -52,6 +52,8 @@ class FollowingFragment : Fragment() {
     }
 
     private fun rvFollowing(username: String?) {
+        showLoading(true)
+
         followingAdapter = FollowingAdapter()
         followingAdapter.notifyDataSetChanged()
 
@@ -59,6 +61,7 @@ class FollowingFragment : Fragment() {
         rv_following.adapter = followingAdapter
 
         followingViewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory()).get(FollowingViewModel::class.java)
+
         if (username != null) {
             followingViewModel.setFollowing(username)
         }
@@ -66,7 +69,16 @@ class FollowingFragment : Fragment() {
         followingViewModel.getFollowing().observe(viewLifecycleOwner, {FollowingItems ->
             if (FollowingItems != null) {
                 followingAdapter.setData(FollowingItems)
+                showLoading(false)
             }
         })
+    }
+
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            pb_FragmentFollowing.visibility = View.VISIBLE
+        } else {
+            pb_FragmentFollowing.visibility = View.GONE
+        }
     }
 }
