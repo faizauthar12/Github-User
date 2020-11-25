@@ -28,10 +28,6 @@ class FollowingFragment : Fragment() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -47,10 +43,6 @@ class FollowingFragment : Fragment() {
         rvFollowing(username)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
-
     private fun rvFollowing(username: String?) {
         showLoading(true)
 
@@ -60,8 +52,7 @@ class FollowingFragment : Fragment() {
         rv_following.layoutManager = LinearLayoutManager(activity)
         rv_following.adapter = followingAdapter
 
-        followingViewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory()).get(FollowingViewModel::class.java)
-
+        followingViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowingViewModel::class.java)
         if (username != null) {
             followingViewModel.setFollowing(username)
         }
