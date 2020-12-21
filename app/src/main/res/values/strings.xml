@@ -20,4 +20,5 @@
 
     <!-- Search -->
     <string name="search_hint">Masukkan nama pengguna</string>
+    <string name="favorite">favorite</string>
 </resources>

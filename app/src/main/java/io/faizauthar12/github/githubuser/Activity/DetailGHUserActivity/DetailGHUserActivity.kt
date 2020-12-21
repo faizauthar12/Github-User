@@ -1,5 +1,6 @@
 package io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity
 
+import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,6 +14,8 @@ import io.faizauthar12.github.githubuser.Adapter.DetailGHUserActivity.SectionsPa
 import io.faizauthar12.github.githubuser.BuildConfig
 import io.faizauthar12.github.githubuser.Model.Username
 import io.faizauthar12.github.githubuser.R
+import io.faizauthar12.github.githubuser.db.FavoriteHelper
+import io.faizauthar12.github.githubuser.db.UserContract
 import kotlinx.android.synthetic.main.activity_detail_g_h_user.*
 import org.json.JSONObject
 
@@ -21,12 +24,19 @@ class DetailGHUserActivity : AppCompatActivity() {
         const val EXTRA_USER = "extra_ghuser"
     }
 
+    private var statusFavorite = false
+    private lateinit var favoriteHelper: FavoriteHelper
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_g_h_user)
 
         /* get data from main activity */
         val username = intent.getParcelableExtra<Username>(EXTRA_USER) as Username
+
+        /* open database */
+        favoriteHelper = FavoriteHelper.getInstance(applicationContext)
+        favoriteHelper.open()
 
         /* hidden few iv */
         imageController()
@@ -39,6 +49,12 @@ class DetailGHUserActivity : AppCompatActivity() {
 
         /* Create action bar */
         createBackButton()
+
+        /* Check favorite */
+        checkFavorite(username.username)
+
+        /* Create FAB favorite */
+        createFAB(username.username, username.avatar)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -123,5 +139,43 @@ class DetailGHUserActivity : AppCompatActivity() {
         val actionbar = supportActionBar
         actionbar!!.title = "Detail User"
         actionbar.setDisplayHomeAsUpEnabled(true)
+    }
+
+    private fun checkFavorite(username: String?) {
+        var isPresent = favoriteHelper.queryByLogin(username.toString())
+
+        if (isPresent.count>0) {
+            statusFavorite = true
+        }
+    }
+
+    private fun createFAB(username: String?, avatar: String?) {
+        setStatusFavorite(statusFavorite)
+        fab.setOnClickListener {
+            if (statusFavorite) {
+                favoriteHelper.deleteByLogin(username.toString())
+            } else {
+                val values = ContentValues()
+                values.put(UserContract.UserColumns.LOGIN, username)
+                values.put(UserContract.UserColumns.AVATAR, avatar)
+                favoriteHelper.insert(values)
+            }
+            /* set status after onClick */
+            statusFavorite = !statusFavorite
+            setStatusFavorite(statusFavorite)
+        }
+    }
+
+    private fun setStatusFavorite(statusFavorite: Boolean) {
+        if(statusFavorite){
+            fab.setImageResource(R.drawable.ic_fill_heart)
+        }else{
+            fab.setImageResource(R.drawable.ic_unfill_heart)
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        favoriteHelper.close()
     }
 }

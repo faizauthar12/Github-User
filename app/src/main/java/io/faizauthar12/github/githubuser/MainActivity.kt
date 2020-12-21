@@ -6,11 +6,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity.DetailGHUserActivity
+import io.faizauthar12.github.githubuser.Activity.Favorite.FavoriteActivity
 import io.faizauthar12.github.githubuser.Adapter.UsernameAdapter
 import io.faizauthar12.github.githubuser.Model.Username
 import io.faizauthar12.github.githubuser.ViewModel.UsernameViewModel
@@ -53,6 +55,15 @@ class MainActivity : AppCompatActivity() {
             }
         })
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.favorite -> {
+                Intent(this@MainActivity, FavoriteActivity::class.java).apply { startActivity(this) }
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun rvResults() {
