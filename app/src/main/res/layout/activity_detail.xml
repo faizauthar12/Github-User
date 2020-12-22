@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.DetailGHUserActivity.DetailGHUserActivity">
+    tools:context=".Activity.Detail.DetailActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/IV_GHUser_Avatar"

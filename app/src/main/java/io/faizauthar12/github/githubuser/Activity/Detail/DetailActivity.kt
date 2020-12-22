@@ -1,4 +1,4 @@
-package io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity
+package io.faizauthar12.github.githubuser.Activity.Detail
 
 import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
@@ -10,16 +10,16 @@ import com.bumptech.glide.request.RequestOptions
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
-import io.faizauthar12.github.githubuser.Adapter.DetailGHUserActivity.SectionsPagerAdapter
+import io.faizauthar12.github.githubuser.Activity.Detail.Adapter.SectionsPagerAdapter
 import io.faizauthar12.github.githubuser.BuildConfig
-import io.faizauthar12.github.githubuser.Model.Username
+import io.faizauthar12.github.githubuser.Activity.Main.Model.Username
 import io.faizauthar12.github.githubuser.R
 import io.faizauthar12.github.githubuser.db.FavoriteHelper
 import io.faizauthar12.github.githubuser.db.UserContract
-import kotlinx.android.synthetic.main.activity_detail_g_h_user.*
+import kotlinx.android.synthetic.main.activity_detail.*
 import org.json.JSONObject
 
-class DetailGHUserActivity : AppCompatActivity() {
+class DetailActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_USER = "extra_ghuser"
     }
@@ -29,7 +29,7 @@ class DetailGHUserActivity : AppCompatActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_g_h_user)
+        setContentView(R.layout.activity_detail)
 
         /* get data from main activity */
         val username = intent.getParcelableExtra<Username>(EXTRA_USER) as Username

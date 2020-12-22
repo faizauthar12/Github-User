@@ -10,7 +10,7 @@ import android.content.Intent
 import android.media.RingtoneManager
 import android.os.Build
 import androidx.core.app.NotificationCompat
-import io.faizauthar12.github.githubuser.MainActivity
+import io.faizauthar12.github.githubuser.Activity.Main.MainActivity
 import io.faizauthar12.github.githubuser.R
 import java.util.*
 

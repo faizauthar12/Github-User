@@ -1,4 +1,4 @@
-package io.faizauthar12.github.githubuser.Adapter.DetailGHUserActivity
+package io.faizauthar12.github.githubuser.Activity.Detail.Fragment.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,38 +6,37 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import io.faizauthar12.github.githubuser.Model.Following
+import io.faizauthar12.github.githubuser.Activity.Detail.Fragment.Model.Followers
 import io.faizauthar12.github.githubuser.R
 import kotlinx.android.synthetic.main.item_list_ghuser.view.*
 
+class FollowersAdapter : RecyclerView.Adapter<FollowersAdapter.FollowersViewHolder>() {
+    private val mData = ArrayList<Followers>()
 
-class FollowingAdapter : RecyclerView.Adapter<FollowingAdapter.FollowingViewHolder>() {
-    private val mData = ArrayList<Following>()
-
-    fun setData(items: ArrayList<Following>) {
+    fun setData(items: ArrayList<Followers>) {
         mData.clear()
         mData.addAll(items)
         notifyDataSetChanged()
     }
 
-    inner  class FollowingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(following: Following) {
+    inner  class FollowersViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(followers: Followers) {
             with(itemView) {
                 Glide.with(itemView.context)
-                        .load(following.avatar)
+                        .load(followers.avatar)
                         .apply(RequestOptions().override(60,60))
                         .into(IV_GHUser_Avatar)
-                TV_GHUser_username.text = following.username
+                TV_GHUser_username.text = followers.username
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowingAdapter.FollowingViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowersViewHolder {
         val mView = LayoutInflater.from(parent.context).inflate(R.layout.item_list_ghuser, parent, false)
-        return FollowingViewHolder(mView)
+        return FollowersViewHolder(mView)
     }
 
-    override fun onBindViewHolder(holder: FollowingViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FollowersViewHolder, position: Int) {
         holder.bind(mData[position])
     }
 

@@ -1,4 +1,4 @@
-package io.faizauthar12.github.githubuser.Model
+package io.faizauthar12.github.githubuser.Activity.Detail.Fragment.Model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

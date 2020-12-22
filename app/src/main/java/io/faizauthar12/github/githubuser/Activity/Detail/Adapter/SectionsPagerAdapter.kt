@@ -1,4 +1,4 @@
-package io.faizauthar12.github.githubuser.Adapter.DetailGHUserActivity
+package io.faizauthar12.github.githubuser.Activity.Detail.Adapter
 
 import android.content.Context
 import androidx.annotation.Nullable
@@ -6,8 +6,8 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity.Fragment.FollowersFragment
-import io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity.Fragment.FollowingFragment
+import io.faizauthar12.github.githubuser.Activity.Detail.Fragment.FollowersFragment
+import io.faizauthar12.github.githubuser.Activity.Detail.Fragment.FollowingFragment
 import io.faizauthar12.github.githubuser.R
 
 class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

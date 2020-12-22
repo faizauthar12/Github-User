@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.faizauthar12.github.githubuser.Activity.Favorite.Adapter.FavoriteAdapter
-import io.faizauthar12.github.githubuser.Model.Favorite
+import io.faizauthar12.github.githubuser.Activity.Favorite.Model.Favorite
 import io.faizauthar12.github.githubuser.R
 import io.faizauthar12.github.githubuser.db.FavoriteHelper
 import io.faizauthar12.github.githubuser.helper.MappingHelper

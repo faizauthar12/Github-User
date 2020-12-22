@@ -2,6 +2,7 @@ package io.faizauthar12.github.githubuser.Activity.Settings
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import io.faizauthar12.github.githubuser.Activity.Settings.Fragment.SettingsPreferenceFragment
 import io.faizauthar12.github.githubuser.R
 
 class SettingsActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package io.faizauthar12.github.githubuser.Activity.Settings
+package io.faizauthar12.github.githubuser.Activity.Settings.Fragment
 
 import android.content.Context
 import android.content.SharedPreferences

@@ -1,5 +1,5 @@
 
-package io.faizauthar12.github.githubuser
+package io.faizauthar12.github.githubuser.Activity.Main
 
 import android.app.SearchManager
 import android.content.Intent
@@ -11,12 +11,13 @@ import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity.DetailGHUserActivity
+import io.faizauthar12.github.githubuser.Activity.Detail.DetailActivity
 import io.faizauthar12.github.githubuser.Activity.Favorite.FavoriteActivity
 import io.faizauthar12.github.githubuser.Activity.Settings.SettingsActivity
-import io.faizauthar12.github.githubuser.Adapter.UsernameAdapter
-import io.faizauthar12.github.githubuser.Model.Username
-import io.faizauthar12.github.githubuser.ViewModel.UsernameViewModel
+import io.faizauthar12.github.githubuser.Activity.Main.Adapter.UsernameAdapter
+import io.faizauthar12.github.githubuser.Activity.Main.Model.Username
+import io.faizauthar12.github.githubuser.R
+import io.faizauthar12.github.githubuser.Activity.Main.ViewModel.UsernameViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -88,8 +89,8 @@ class MainActivity : AppCompatActivity() {
 
         usernameAdapter.setOnItemClickCallback(object : UsernameAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Username) {
-                val intent = Intent(this@MainActivity, DetailGHUserActivity::class.java)
-                intent.putExtra(DetailGHUserActivity.EXTRA_USER,data)
+                val intent = Intent(this@MainActivity, DetailActivity::class.java)
+                intent.putExtra(DetailActivity.EXTRA_USER,data)
                 startActivity(intent)
             }
         })

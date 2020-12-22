@@ -20,8 +20,8 @@
             android:exported="true" />
 
         <activity android:name=".Activity.Favorite.FavoriteActivity" />
-        <activity android:name=".Activity.DetailGHUserActivity.DetailGHUserActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.Detail.DetailActivity" />
+        <activity android:name=".Activity.Main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

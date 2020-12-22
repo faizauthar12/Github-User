@@ -1,4 +1,4 @@
-package io.faizauthar12.github.githubuser.ViewModel
+package io.faizauthar12.github.githubuser.Activity.Main.ViewModel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -8,7 +8,7 @@ import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
 import io.faizauthar12.github.githubuser.BuildConfig
-import io.faizauthar12.github.githubuser.Model.Username
+import io.faizauthar12.github.githubuser.Activity.Main.Model.Username
 import org.json.JSONObject
 
 class UsernameViewModel: ViewModel() {

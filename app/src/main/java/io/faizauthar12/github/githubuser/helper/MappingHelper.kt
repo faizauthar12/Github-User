@@ -1,7 +1,7 @@
 package io.faizauthar12.github.githubuser.helper
 
 import android.database.Cursor
-import io.faizauthar12.github.githubuser.Model.Favorite
+import io.faizauthar12.github.githubuser.Activity.Favorite.Model.Favorite
 import io.faizauthar12.github.githubuser.db.UserContract
 
 object MappingHelper {

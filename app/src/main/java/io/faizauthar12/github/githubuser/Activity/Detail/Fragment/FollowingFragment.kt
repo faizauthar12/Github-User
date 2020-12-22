@@ -1,4 +1,4 @@
-package io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity.Fragment
+package io.faizauthar12.github.githubuser.Activity.Detail.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import io.faizauthar12.github.githubuser.Adapter.DetailGHUserActivity.FollowingAdapter
+import io.faizauthar12.github.githubuser.Activity.Detail.Fragment.Adapter.FollowingAdapter
 import io.faizauthar12.github.githubuser.R
-import io.faizauthar12.github.githubuser.ViewModel.FollowingViewModel
+import io.faizauthar12.github.githubuser.Activity.Detail.Fragment.ViewModel.FollowingViewModel
 import kotlinx.android.synthetic.main.fragment_following.*
 
 class FollowingFragment : Fragment() {
