@@ -12,7 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubUser"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Favorite.FavoriteActivity"></activity>
+        <activity android:name=".Activity.Settings.SettingsActivity"></activity>
+
+        <receiver
+            android:name=".Alarm.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".Activity.Favorite.FavoriteActivity" />
         <activity android:name=".Activity.DetailGHUserActivity.DetailGHUserActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

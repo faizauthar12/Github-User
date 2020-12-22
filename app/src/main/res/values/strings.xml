@@ -21,4 +21,10 @@
     <!-- Search -->
     <string name="search_hint">Masukkan nama pengguna</string>
     <string name="favorite">favorite</string>
+
+    <!-- Setting preference -->
+    <string name="key_reminder">reminder</string>
+    <string name="reminder">Reminder</string>
+    <string name="notif_message">Find GitHub user now!</string>
+    <string name="settings">Settings</string>
 </resources>

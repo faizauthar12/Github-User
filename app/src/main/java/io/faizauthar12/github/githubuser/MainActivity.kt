@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.faizauthar12.github.githubuser.Activity.DetailGHUserActivity.DetailGHUserActivity
 import io.faizauthar12.github.githubuser.Activity.Favorite.FavoriteActivity
+import io.faizauthar12.github.githubuser.Activity.Settings.SettingsActivity
 import io.faizauthar12.github.githubuser.Adapter.UsernameAdapter
 import io.faizauthar12.github.githubuser.Model.Username
 import io.faizauthar12.github.githubuser.ViewModel.UsernameViewModel
@@ -61,6 +62,9 @@ class MainActivity : AppCompatActivity() {
         when(item.itemId) {
             R.id.favorite -> {
                 Intent(this@MainActivity, FavoriteActivity::class.java).apply { startActivity(this) }
+            }
+            R.id.settings -> {
+                Intent(this@MainActivity,SettingsActivity::class.java).apply { startActivity(this) }
             }
         }
         return super.onOptionsItemSelected(item)
