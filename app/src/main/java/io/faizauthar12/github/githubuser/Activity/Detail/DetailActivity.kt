@@ -15,7 +15,9 @@ import io.faizauthar12.github.githubuser.BuildConfig
 import io.faizauthar12.github.githubuser.Activity.Main.Model.Username
 import io.faizauthar12.github.githubuser.R
 import io.faizauthar12.github.githubuser.db.FavoriteHelper
-import io.faizauthar12.github.githubuser.db.UserContract
+import io.faizauthar12.github.githubuser.db.UserContract.UserColumns.Companion.AVATAR
+import io.faizauthar12.github.githubuser.db.UserContract.UserColumns.Companion.CONTENT_URI
+import io.faizauthar12.github.githubuser.db.UserContract.UserColumns.Companion.LOGIN
 import kotlinx.android.synthetic.main.activity_detail.*
 import org.json.JSONObject
 
@@ -26,7 +28,7 @@ class DetailActivity : AppCompatActivity() {
 
     private var statusFavorite = false
     private lateinit var favoriteHelper: FavoriteHelper
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -89,9 +91,9 @@ class DetailActivity : AppCompatActivity() {
 
                     /* Get Avatar */
                     Glide.with(applicationContext)
-                        .load(responseObject.getString("avatar_url"))
-                        .apply(RequestOptions().override(100,100))
-                        .into(IV_GHUser_Avatar)
+                            .load(responseObject.getString("avatar_url"))
+                            .apply(RequestOptions().override(100,100))
+                            .into(IV_GHUser_Avatar)
 
                     /* Set it to layout xml */
                     TV_GHUser_username.text = "@${login}"
@@ -156,9 +158,9 @@ class DetailActivity : AppCompatActivity() {
                 favoriteHelper.deleteByLogin(username.toString())
             } else {
                 val values = ContentValues()
-                values.put(UserContract.UserColumns.LOGIN, username)
-                values.put(UserContract.UserColumns.AVATAR, avatar)
-                favoriteHelper.insert(values)
+                values.put(LOGIN, username)
+                values.put(AVATAR, avatar)
+                contentResolver.insert(CONTENT_URI,values)
             }
             /* set status after onClick */
             statusFavorite = !statusFavorite

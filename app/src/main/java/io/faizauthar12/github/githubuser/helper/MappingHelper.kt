@@ -20,4 +20,15 @@ object MappingHelper {
         }
         return favoriteList
     }
+
+    fun mapCursorToObject(notesCursor: Cursor?): Favorite {
+        var favorite = Favorite()
+        notesCursor?.apply {
+            moveToFirst()
+            val login = getString(getColumnIndexOrThrow(UserContract.UserColumns.LOGIN))
+            val avatar = getString(getColumnIndexOrThrow(UserContract.UserColumns.AVATAR))
+            favorite = Favorite(login, avatar)
+        }
+        return favorite
+    }
 }

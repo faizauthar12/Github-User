@@ -7,6 +7,7 @@ import io.faizauthar12.github.githubuser.Activity.Favorite.Adapter.FavoriteAdapt
 import io.faizauthar12.github.githubuser.Activity.Favorite.Model.Favorite
 import io.faizauthar12.github.githubuser.R
 import io.faizauthar12.github.githubuser.db.FavoriteHelper
+import io.faizauthar12.github.githubuser.db.UserContract.UserColumns.Companion.CONTENT_URI
 import io.faizauthar12.github.githubuser.helper.MappingHelper
 import kotlinx.android.synthetic.main.activity_favorite.*
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +17,6 @@ import kotlinx.coroutines.launch
 
 class FavoriteActivity : AppCompatActivity() {
     private lateinit var adapter: FavoriteAdapter
-    private lateinit var favoriteHelper: FavoriteHelper
 
     companion object {
         private const val EXTRA_STATE = "EXTRA_STATE"
@@ -31,9 +31,6 @@ class FavoriteActivity : AppCompatActivity() {
         rv_favorite.setHasFixedSize(true)
         adapter = FavoriteAdapter(this)
         rv_favorite.adapter = adapter
-
-        favoriteHelper = FavoriteHelper.getInstance(applicationContext)
-        favoriteHelper.open()
 
         if (savedInstanceState == null) {
             loadFavoritesAsync()
@@ -64,7 +61,7 @@ class FavoriteActivity : AppCompatActivity() {
     private fun loadFavoritesAsync() {
         GlobalScope.launch(Dispatchers.Main){
             val deferredFavorites = async(Dispatchers.IO){
-                val cursor = favoriteHelper.queryAll()
+                val cursor = contentResolver.query(CONTENT_URI, null, null, null, null)
                 MappingHelper.mapCursorToArrayList(cursor)
             }
             val favorites = deferredFavorites.await()
@@ -79,10 +76,5 @@ class FavoriteActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putParcelableArrayList(EXTRA_STATE, adapter.listFavorites)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        favoriteHelper.close()
     }
 }

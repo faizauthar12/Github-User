@@ -3,6 +3,8 @@
     package="io.faizauthar12.github.githubuser">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <permission android:name="io.faizauthar12.github.githubuser.READ_DATABASE" android:protectionLevel="normal"/>
+    <permission android:name="io.faizauthar12.github.githubuser.WRITE_DATABASE" android:protectionLevel="normal"/>
 
     <application
         android:allowBackup="true"
@@ -28,6 +30,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <provider
+            android:authorities="io.faizauthar12.github.githubuser"
+            android:name=".provider.FavoriteProvider"
+            android:exported="true"
+            android:readPermission="io.faizauthar12.github.githubuser.READ_DATABASE"
+            android:writePermission="io.faizauthar12.github.githubuser.WRITE_DATABASE"/>
     </application>
 
 </manifest>
