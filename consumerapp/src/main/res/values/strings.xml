@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ConsumerApp</string>
+    <string name="GHU_username">"@%1$s"</string>
+    <string name="github_ocotpus_vector">GitHub Ocotpus Vector</string>
+    <string name="user">User</string>
+    <string name="consumer_favorite">Consumer Favorite</string>
+</resources>
