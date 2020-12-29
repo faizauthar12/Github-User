@@ -4,6 +4,7 @@ import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Display
 import android.view.View
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -11,6 +12,7 @@ import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
 import io.faizauthar12.github.githubuser.Activity.Detail.Adapter.SectionsPagerAdapter
+import io.faizauthar12.github.githubuser.Activity.Favorite.Model.Favorite
 import io.faizauthar12.github.githubuser.BuildConfig
 import io.faizauthar12.github.githubuser.Activity.Main.Model.Username
 import io.faizauthar12.github.githubuser.R
@@ -24,7 +26,13 @@ import org.json.JSONObject
 class DetailActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_USER = "extra_ghuser"
+        const val EXTRA_FAV = "extra_fav"
     }
+    private var username: Username? = null
+    private var favorite: Favorite? = null
+
+    private var DisplayUsername: String? = null
+    private var DisplayAvatar: String? = null
 
     private var statusFavorite = false
     private lateinit var favoriteHelper: FavoriteHelper
@@ -33,9 +41,6 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        /* get data from main activity */
-        val username = intent.getParcelableExtra<Username>(EXTRA_USER) as Username
-
         /* open database */
         favoriteHelper = FavoriteHelper.getInstance(applicationContext)
         favoriteHelper.open()
@@ -43,20 +48,32 @@ class DetailActivity : AppCompatActivity() {
         /* hidden few iv */
         imageController()
 
-        /* get detail of selected username */
-        getDetail(username.username)
-
-        /* create tablayout */
-        createTabLayout(username.username)
-
         /* Create action bar */
         createBackButton()
 
+        /* Checking user come from which activity */
+        username = intent.getParcelableExtra(EXTRA_USER)
+        if(username != null){
+            val dataUsername = intent.getParcelableExtra<Username>(EXTRA_USER) as Username
+            DisplayUsername = dataUsername.username
+            DisplayAvatar = dataUsername.avatar
+        } else {
+            val dataFavorite = intent.getParcelableExtra<Favorite>(EXTRA_FAV) as Favorite
+            DisplayUsername = dataFavorite.login
+            DisplayAvatar = dataFavorite.avatar
+        }
+
+        /* get detail of selected username */
+        getDetail(DisplayUsername)
+
+        /* create tablayout */
+        createTabLayout(DisplayUsername)
+
         /* Check favorite */
-        checkFavorite(username.username)
+        checkFavorite(DisplayUsername)
 
         /* Create FAB favorite */
-        createFAB(username.username, username.avatar)
+        createFAB(DisplayUsername, DisplayAvatar)
     }
 
     override fun onSupportNavigateUp(): Boolean {

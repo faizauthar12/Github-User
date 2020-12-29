@@ -1,6 +1,7 @@
 package io.faizauthar12.github.githubuser.Activity.Favorite.Adapter
 
 import android.app.Activity
+import android.service.autofill.UserData
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,26 +23,40 @@ class FavoriteAdapter(private val activity: Activity) : RecyclerView.Adapter<Fav
         notifyDataSetChanged()
     }
 
+    var onItemClickCallback: OnItemClickCallback? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_list_ghuser, parent, false)
         return FavoriteViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: FavoriteViewHolder, position: Int) {
-        holder.bind(listFavorites[position])
+        //holder.bind(listFavorites[position])
+        val favorite = listFavorites[position]
+        holder.bind(favorite){
+            onItemClickCallback?.onItemClicked(favorite)
+        }
     }
 
     override fun getItemCount(): Int = this.listFavorites.size
 
     inner class FavoriteViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun bind(favorite: Favorite){
+        fun bind(favorite: Favorite, itemClicked: (View) -> Unit){
             with(itemView){
                 Glide.with(itemView.context)
                         .load(favorite.avatar)
                         .apply(RequestOptions().override(60,60))
                         .into(itemView.IV_GHUser_Avatar)
                 TV_GHUser_username.text = favorite.login
+
+                setOnClickListener {
+                    itemClicked.invoke(itemView)
+                }
             }
         }
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(favorite: Favorite)
     }
 }

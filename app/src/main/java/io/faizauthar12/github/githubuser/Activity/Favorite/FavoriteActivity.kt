@@ -1,8 +1,10 @@
 package io.faizauthar12.github.githubuser.Activity.Favorite
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import io.faizauthar12.github.githubuser.Activity.Detail.DetailActivity
 import io.faizauthar12.github.githubuser.Activity.Favorite.Adapter.FavoriteAdapter
 import io.faizauthar12.github.githubuser.Activity.Favorite.Model.Favorite
 import io.faizauthar12.github.githubuser.R
@@ -32,12 +34,25 @@ class FavoriteActivity : AppCompatActivity() {
         adapter = FavoriteAdapter(this)
         rv_favorite.adapter = adapter
 
+        onClickItem()
+
         if (savedInstanceState == null) {
             loadFavoritesAsync()
         } else {
             val list = savedInstanceState.getParcelableArrayList<Favorite>(EXTRA_STATE)
             if (list != null) {
                 adapter.listFavorites = list
+            }
+        }
+    }
+
+    private fun onClickItem() {
+        adapter.onItemClickCallback = object : FavoriteAdapter.OnItemClickCallback{
+            override fun onItemClicked(favorite: Favorite) {
+                Intent(this@FavoriteActivity, DetailActivity::class.java).apply {
+                    putExtra(DetailActivity.EXTRA_FAV, favorite)
+                    startActivity(this)
+                }
             }
         }
     }
