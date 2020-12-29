@@ -92,4 +92,9 @@ class FavoriteActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         outState.putParcelableArrayList(EXTRA_STATE, adapter.listFavorites)
     }
+
+    override fun onResume() {
+        super.onResume()
+        loadFavoritesAsync()
+    }
 }
